@@ -1,0 +1,25 @@
+---
+version: 1
+branches:
+  - match: "."
+    match_type: "regex"
+    config:
+      cloudformation:
+        Parameters:
+          - ParameterKey: "Environment"
+            ParameterValueVariable: "base_branch"
+          - ParameterKey: "AccountId"
+            ParameterValueVariable: "aws_account_id"
+          - ParameterKey: "Side8Id"
+            ParameterValueVariable: "side8_id"
+  - match: "prod"
+    config:
+#     deploy_account_id: ???
+  - match: "nonprod"
+    config:
+#     deploy_account_id: ???
+  - match: "build"
+    config:
+#     deploy_account_id: ???
+config:
+# build_account_id: ???
